@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="applicable-device" content="mobile">
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/auto.js"></script>
+</head>
+<body class="bg-white">
+
+    <div class="card-banner"></div>
+    <div class="card-con">
+        <h2 class="con-title t-blod">一卡通服务介绍 <a  class="t-blue fr lot-popup">了解更多</a></h2>
+        <div class="m30" style="margin-bottom: 0">
+
+            <p class="con-p">
+                它是一张智能IC卡，是湖南高科园创企业管理服务股份有限公司根据高科集
+                团智慧园区建设需求，在园区引入的一卡通数字化子平台系统。一卡通平台
+                采用IC卡技术针对园区的需求，将管理和服务设施全面纳入计算机综合管理系统。
+            </p>
+        </div>
+    </div>
+    <div class="card-con top-line">
+        <h2 class="con-title t-blod">账号绑定</h2>
+        <div class="text-c">
+            <div class="card-bg1  get-pos">
+                  <p class="card-hao">卡&nbsp;&nbsp;号&nbsp;：
+                      <input id="money" onmouseleave="checkInput()" oninput="changeBtnable()" required="required" class="hao-inp inp-pos" placeholder="请输入卡号"/ >
+                      <input type="button" value="立即绑定" class="btn" id="btn1">
+                  </p>
+                  <p class="card-hao">密&nbsp;&nbsp;码&nbsp;：
+                      <input type="text" placeholder="请输入卡密码" class="hao-inp"></p>
+
+
+
+            </div>
+        </div>
+    </div>
+<!--已绑定-->
+    <div class="card-con top-line" style="display: none">
+        <h2 class="con-title t-blod">账号绑定</h2>
+        <div class="text-c">
+            <div class="card-bg2">
+               <ul class="hao-lis">
+                   <li>持卡人： <span>王璇限</span></li>
+                   <li>卡<b style="visibility: hidden">哈</b>号： <span>5266586332336632</span></li>
+                   <li>余<b style="visibility: hidden">哈</b>额： <span>100.2</span></li>
+                   <li>卡状态： <span>已激活</span> <a href="" class="unbind fr">解除绑定</a></li>
+
+               </ul>
+            </div>
+        </div>
+    </div>
+    <div class="my-con bg-white top-line pb10" style="display: none">
+        <ul class="my-con-lis">
+            <li class="next-rig bb">
+                <a href="物业订单.html">
+                    <img src="images/card-recharge.png" alt="">充值
+                </a>
+            </li>
+            <li class="next-rig bb">
+                <a href="">
+                    <img src="images/card-jilu.png" alt="">充值记录
+                </a>
+            </li>
+            <li class="next-rig bb">
+                <a href="">
+                    <img src="images/card-xiaofei.png" alt="">消费记录
+                </a>
+            </li>
+            <li class="next-rig ">
+                <a href="政务信息.html">
+                    <img src="images/card-guashi.png" alt="">挂失
+                </a>
+            </li>
+        </ul>
+
+    </div>
+<!--一卡通密码-->
+    <div class="popup-bg" style="display: block">
+        <div class="inp-password">
+            <a href="" class="close fr"></a>
+            <h3 class="pay-password">请输入一卡通密码</h3>
+            <div class="pwd-box">
+                <input type="tel" maxlength="6" class="pwd-input" id="pwd-input">
+                <div class="fake-box">
+                    <input type="password" readonly="">
+                    <input type="password" readonly="">
+                    <input type="password" readonly="">
+                    <input type="password" readonly="">
+                    <input type="password" readonly="">
+                    <input type="password" readonly="" style="margin-left: -0.1rem">
+                </div>
+            </div>
+            <!--<ul class="pass-box clearfix">-->
+                <!--<li>-->
+                    <!--<input type="password" maxlength="1">-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<input type="password" maxlength="1">-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<input type="password" maxlength="1">-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<input type="password" maxlength="1">-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<input type="password" maxlength="1">-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<input type="password" maxlength="1">-->
+                <!--</li>-->
+            <!--</ul>-->
+        </div>
+    </div>
+<!--挂失成功-->
+    <div class="gs-ok" style="display: none">
+        <a href="" class="close-ok fr"></a>
+        挂失成功
+    </div>
+<!--挂失失败-->
+    <div class="gs-ok gs-no" style="display: none">
+        <a href="" class="close-ok fr"></a>
+        一卡通密码错误，请重试
+    </div>
+<!--了解更多-->
+    <div class="popup-bg" style="display: none" id="popup1">
+        <div class="learn-more bg-white">
+            <a href="" class=" close-x"></a>
+            <div class="more-con">
+                 <ul class="more-lis">
+                     <li>
+                         <h3>一卡通是什么？</h3>
+                         <p>它是一张智能IC卡，是湖南高科园创企业管理服务股份有限公司根据高科集团智慧园区建设需求，在园区引入的一卡通数字化子平台系统。一卡通平台采用IC卡技术针对园区的需求，将管理和服务设施全面纳入计算机综合管理系统。</p>
+                     </li>
+                     <li>
+                         <h3>一卡通能做什么?</h3>
+                         <p>公司根据高科集团智慧园区建设需求，在园区引入的一卡通数字化子平台系统。一卡通平台采用IC卡</p>
+                     </li>
+                     <li>
+                         <h3>一卡通怎么办理？</h3>
+                         <p>人办卡/充值：携带个人身份证前往一站式服务中心前台办理开卡/充值。<br>
+                             企业办卡：以企业为单位，负责人按要求统计汇总员工姓名、身份证号码、手机号码、公司名称等信息发送给一站式前台客服人员进行批量办理开卡。<br>
+                             企业批量充值：统计充值人员名单、卡号及充值金额发送给一站式服务中心前台人员进行办理。<br>
+                             一站式服务中心服务热线：4008330505</p>
+                     </li>
+                     <li>
+                         <h3>一卡通办理须知？</h3>
+                         <p>一卡通押金15元/张，退卡时退回押金。<br>
+                             挂失/补卡/换卡：携带个人身份证到一站式服务中心前台办理。补卡/换卡收取工本费15元/张。</p>
+                     </li>
+                     <li>
+                         <h3>一卡通余额查询？</h3>
+                         <p>一卡通余额、消费充值记录查询：请扫描以下二维码关注公众号“湖南高科园创”即可查询。</p>
+                     </li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $(".lot-popup").click(function(){
+                $("#popup1").show();
+            });
+            $(".close-x").click(function(){
+                $("#popup1").hide();
+            })
+        })
+    </script>
+<script>
+    var $input = $(".fake-box input");
+    $("#pwd-input").on("input", function() {
+        var pwd = $(this).val().trim();
+        for (var i = 0, len = pwd.length; i < len; i++) {
+            $input.eq("" + i + "").val(pwd[i]);
+        }
+        $input.each(function() {
+            var index = $(this).index();
+            if (index >= len) {
+                $(this).val("");
+            }
+        });
+        if (len == 6) {
+            //执行其他操作
+        }
+    });
+</script>
+</body>
+</html>
